@@ -5,8 +5,6 @@ import { auth } from "@clerk/nextjs/server";
 export async function getMyImages() {
   const user = auth();
 
-  console.log("user", user);
-
   if (!user.userId) throw new Error("Unauthorized");
 
   const images = await db.query.images.findMany({
