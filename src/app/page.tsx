@@ -1,5 +1,6 @@
 import { db } from "~/server/db";
 
+export const preferredRegion = "pdx1";
 export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
