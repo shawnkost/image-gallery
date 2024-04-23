@@ -1,12 +1,13 @@
-import "~/styles/globals.css";
 import "@uploadthing/react/styles.css";
+import "~/styles/globals.css";
 
-import { Inter } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
-import { TopNav } from "./_components/topnav";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
+import { Inter } from "next/font/google";
 import { extractRouterConfig } from "uploadthing/server";
+import { TopNav } from "./_components/topnav";
 import { ourFileRouter } from "./api/uploadthing/core";
+import { Toaster } from "~/components/ui/sonner";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -45,6 +46,7 @@ export default function RootLayout({
           </div>
           {modal}
           <div id="modal-root" />
+          <Toaster />
         </body>
       </html>
     </ClerkProvider>
